@@ -27,7 +27,6 @@ fn main() {
         } else {
             // 全ての整数を2で割る
             devide_integer_by_2(&count, &mut list, &mut operation_count);
-            continue;
         }
     }
 }
