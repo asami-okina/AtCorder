@@ -45,6 +45,7 @@ fn is_all_even(count: &usize, list: &Vec<usize>) -> bool {
     is_all_even
 }
 
+// 全ての整数を2で割る
 fn devide_integer_by_2(count: &usize, list: &mut Vec<usize>, operation_count: &mut i32) {
     let count = count.clone();
     for index in 0..count {
