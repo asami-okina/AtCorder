@@ -10,28 +10,45 @@ fn main() {
     // );
     input!(
         // from sorce,
-        a: usize,
-        mut b: [usize;a]
+        count: usize,
+        mut list: [usize;count]
     );
 
     // 操作回数
-    let mut operation_count: i32 = 0;
+    let mut operation_count: i32 = 0;;
 
     loop {
         // 全てが偶数かどうか
-        let mut is_all_even: bool = true;
-        for index in 0..a {
-            if b[index] % 2 == 1 {
-                is_all_even = false;
-            }
-            b[index] = b[index] / 2;
-        }
+        let is_all_even:bool = is_all_even(&count, &list);
+
         if !is_all_even {
             println!("{}", operation_count);
             break;
         } else {
-            operation_count += 1;
+            // 全ての整数を2で割る
+            devide_integer_by_2(&count, &mut list, &mut operation_count);
             continue;
         }
     }
+}
+
+
+// 全て偶数かどうか
+fn is_all_even(count: &usize, list: &Vec<usize>) -> bool {
+    let count = count.clone();
+    let mut is_all_even = true;
+    for index in 0..count {
+        if list[index] % 2 == 1 {
+            is_all_even = false
+        }
+    }
+    is_all_even
+}
+
+fn devide_integer_by_2(count: &usize, list: &mut Vec<usize>, operation_count: &mut i32) {
+    let count = count.clone();
+    for index in 0..count {
+        list[index] = list[index] / 2;
+    }
+    *operation_count += 1;
 }
