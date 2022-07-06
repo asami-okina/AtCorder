@@ -79,6 +79,7 @@ fn main () {
 
     for i in 0..count {
         // OR(|):どちらかが1なら1、どちらも0の場合は0を返す
+        // 右端のビットが1であれば奇数
         println!("for bit1:{}",bit);
         println!("for list[i]:{}",list[i]);
         bit = list[i]| bit;
