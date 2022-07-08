@@ -1,0 +1,10 @@
+[package]
+name = "abc253-a"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+# 競技プログラミングの入出力サポートその1
+proconio = { version = "=0.3.6", features = ["derive"] }
