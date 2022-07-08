@@ -2,17 +2,19 @@ use proconio::input;
 use proconio::source::auto::AutoSource;
 
 fn main() {
-    // let source = AutoSource::from(
-    //     "
-    //     60
-    //     ",
-    // );
+    let source = AutoSource::from(
+        "
+        59
+        ",
+    );
     input!(
-        // from source,
+        from source,
         n: i64
     );
-
-    println!("{:02}:{:02}", 21 + n / 60, n % 60);
+    
+    // 時間部分: 60を超えていたら、+1する
+    // 分数部分: nを60で割った余りが分数となる
+    println!("{:02}:{:02}", 21 + (n / 60), n % 60);
 
     // パターン2
     // let result: String;
