@@ -12,7 +12,7 @@ fn main() {
         // from source,
         n: i32,
         k: i32,
-        a: i32,
+        mut a: i32,
     };
 
     // 前提
@@ -21,12 +21,12 @@ fn main() {
     // a: 人aから配り始める
     // 最後に配るのは、(a + k - 1)の人
 
-    let last_people = a + k - 1;
-    let result = last_people % n;
-
-    if result == 0 {
-        println!("{}", n);
-    } else {
-        println!("{}", result);
+    for _ in 1..=k-1 {
+        if a < n {
+            a = a + 1;
+        } else if n == a {
+            a = 1;
+        }
     }
+    println!("{}", a);
 }
